@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Junior.ApplicationServices</name>
+    </assembly>
+    <members>
+        <member name="T:Junior.ApplicationServices.EmailBodyFormat">
+            <summary>
+            The body format of an email message.
+            </summary>
+        </member>
+        <member name="F:Junior.ApplicationServices.EmailBodyFormat.Html">
+            <summary>
+            HTML.
+            </summary>
+        </member>
+        <member name="F:Junior.ApplicationServices.EmailBodyFormat.PlainText">
+            <summary>
+            Plain text.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.EmailSender">
+            <summary>
+            Sends an email message.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.IEmailSender">
+            <summary>
+            Represents a way to send an email message.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.IEmailSender.Send(System.String,System.String,Junior.ApplicationServices.EmailBodyFormat,Junior.ApplicationServices.EmailSenderSynchronization,Junior.Common.EmailAddress[])">
+            <summary>
+            Sends an email message.
+            </summary>
+            <param name="subject">The email's subject.</param>
+            <param name="body">The email's body.</param>
+            <param name="bodyFormat">The format of the email's body.</param>
+            <param name="synchronization">Determines whether email messages are sent synchronously or asynchronously.</param>
+            <param name="toAddresses">Email addresses to which the email will be sent.</param>
+        </member>
+        <member name="M:Junior.ApplicationServices.EmailSender.#ctor(Junior.ApplicationServices.IEmailSenderConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.ApplicationServices.EmailSender"/> class.
+            </summary>
+            <param name="configuration">Configuration necessary to send email messages.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="configuration"/> is null.</exception>
+        </member>
+        <member name="M:Junior.ApplicationServices.EmailSender.Send(System.String,System.String,Junior.ApplicationServices.EmailBodyFormat,Junior.ApplicationServices.EmailSenderSynchronization,Junior.Common.EmailAddress[])">
+            <summary>
+            Sends an email message.
+            </summary>
+            <param name="subject">The email's subject.</param>
+            <param name="body">The email's body.</param>
+            <param name="bodyFormat">The format of the email's body.</param>
+            <param name="synchronization">Determines whether email messages are sent synchronously or asynchronously.</param>
+            <param name="toAddresses">Email addresses to which the email will be sent.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="toAddresses"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="toAddresses"/> is empty.</exception>
+        </member>
+        <member name="T:Junior.ApplicationServices.AbsoluteUrlBuilder">
+            <summary>
+            Builds absolute URLs.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.IAbsoluteUrlBuilder">
+            <summary>
+            Represents a way to build absolute URLs given a relative URL.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.IAbsoluteUrlBuilder.Build(System.String)">
+            <summary>
+            Builds an absolute URL given a relative URL.
+            </summary>
+            <param name="relativeUrl">A relative URL.</param>
+            <returns>An absolute URL.</returns>
+        </member>
+        <member name="M:Junior.ApplicationServices.AbsoluteUrlBuilder.#ctor(Junior.ApplicationServices.IAbsoluteUrlBuilderConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.ApplicationServices.AbsoluteUrlBuilder"/> class.
+            </summary>
+            <param name="configuration">Configuration necessary to build absolute URLs.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="configuration"/> is null.</exception>
+        </member>
+        <member name="M:Junior.ApplicationServices.AbsoluteUrlBuilder.Build(System.String)">
+            <summary>
+            Builds an absolute URL given a relative URL.
+            </summary>
+            <param name="relativeUrl">A relative URL.</param>
+            <returns>An absolute URL.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="relativeUrl"/> is null.</exception>
+        </member>
+        <member name="T:Junior.ApplicationServices.EmailSenderSynchronization">
+            <summary>
+            Determines whether email messages are sent synchronously or asynchronously.
+            </summary>
+        </member>
+        <member name="F:Junior.ApplicationServices.EmailSenderSynchronization.Synchronous">
+            <summary>
+            Email messages are sent synchronously.
+            </summary>
+        </member>
+        <member name="F:Junior.ApplicationServices.EmailSenderSynchronization.Asynchronous">
+            <summary>
+            Email messages are sent asynchronously.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.HtmlEncoderOptions">
+            <summary>
+            Options that control how HTML is encoded.
+            </summary>
+        </member>
+        <member name="F:Junior.ApplicationServices.HtmlEncoderOptions.None">
+            <summary>
+            Only normal HTML encoding.
+            </summary>
+        </member>
+        <member name="F:Junior.ApplicationServices.HtmlEncoderOptions.ReplaceNewLinesWithBrTags">
+            <summary>
+            Replace <see cref="P:System.Environment.NewLine"/> occurrences with BR tags in addition to normal HTML encoding.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.IEmailSenderConfiguration">
+            <summary>
+            Represents configuration necessary to send email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.SmtpHost">
+            <summary>
+            Gets the hostname of an SMTP server.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.SmtpPort">
+            <summary>
+            Gets a port for SMTP communication.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.Timeout">
+            <summary>
+            Gets a timeout for sending email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.UseSsl">
+            <summary>
+            Gets a value indicating if SSL will be used when sending email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.Credentials">
+            <summary>
+            Gets the credentials to use when authenticating with the SMTP server.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.FromAddress">
+            <summary>
+            Gets the email address sending the email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IEmailSenderConfiguration.FromAddressDisplayName">
+            <summary>
+            Gets the display name of the email address sending the email messages.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.IAbsoluteUrlBuilderConfiguration">
+            <summary>
+            Represents configuration necessary to build absolute URLs.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IAbsoluteUrlBuilderConfiguration.RootUrl">
+            <summary>
+            Gets a root URL.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.IHtmlEncoder">
+            <summary>
+            Represents a way to encode and decode HTML.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.IHtmlEncoder.Encode(System.String,Junior.ApplicationServices.HtmlEncoderOptions)">
+            <summary>
+            Encodes HTML.
+            </summary>
+            <param name="value">The value to encode.</param>
+            <param name="options">Encoding options.</param>
+            <returns>The encoded HTML.</returns>
+        </member>
+        <member name="M:Junior.ApplicationServices.IHtmlEncoder.Decode(System.String)">
+            <summary>
+            Decodes HTML.
+            </summary>
+            <param name="value">The value to decode.</param>
+            <returns>The decoded HTML.</returns>
+        </member>
+        <member name="T:Junior.ApplicationServices.INewLineReplacer">
+            <summary>
+            Represents a way to replace <see cref="P:System.Environment.NewLine"/> occurrences with BR tags.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.INewLineReplacer.ReplaceWithBrTags(System.String)">
+            <summary>
+            Replaces <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences with BR tags.
+            </summary>
+            <param name="value">The value whose <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences are to be replaced.</param>
+            <returns><paramref name="value"/> with its <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences replaced.</returns>
+        </member>
+        <member name="M:Junior.ApplicationServices.INewLineReplacer.ReplaceWithBrTags(System.Text.StringBuilder)">
+            <summary>
+            Replaces <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences with BR tags.
+            </summary>
+            <param name="stringBuilder">A <see cref="T:System.Text.StringBuilder"/> whose <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences are to be replaced.</param>
+            <returns><paramref name="stringBuilder"/> with its <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences replaced.</returns>
+        </member>
+        <member name="T:Junior.ApplicationServices.IReCaptchaValidatorConfiguration">
+            <summary>
+            Represents configuration necessary to validate reCAPTCHA responses.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IReCaptchaValidatorConfiguration.Url">
+            <summary>
+            Gets the URL for which reCAPTCHA is configured.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IReCaptchaValidatorConfiguration.PublicKey">
+            <summary>
+            Gets the reCAPTCHA public key.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IReCaptchaValidatorConfiguration.PrivateKey">
+            <summary>
+            Gets the reCAPTCHA private key.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IReCaptchaValidatorConfiguration.UserAgent">
+            <summary>
+            Gets the value of the User-Agent header when validating responses.
+            </summary>
+        </member>
+        <member name="P:Junior.ApplicationServices.IReCaptchaValidatorConfiguration.Timeout">
+            <summary>
+            Gets the amount of time before a validation request times out.
+            </summary>
+        </member>
+        <member name="T:Junior.ApplicationServices.IReCaptchaValidator">
+            <summary>
+            Represents a way to validate reCAPTCHA responses.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.IReCaptchaValidator.ValidateResponse(System.Net.IPAddress,System.String,System.String)">
+            <summary>
+            Validates a reCAPTCHA response.
+            </summary>
+            <param name="ipAddress">The remote IP address.</param>
+            <param name="challenge">The challenge string.</param>
+            <param name="response">The user's response.</param>
+            <returns>true if the user's response is correct; otherwise, false.</returns>
+        </member>
+        <member name="T:Junior.ApplicationServices.IUrlEncoder">
+            <summary>
+            Represents a way to encode and decode URLs.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.IUrlEncoder.Encode(System.String)">
+            <summary>
+            Encodes a URL.
+            </summary>
+            <param name="value">The value to encode.</param>
+            <returns>The encoded URL.</returns>
+        </member>
+        <member name="M:Junior.ApplicationServices.IUrlEncoder.Decode(System.String)">
+            <summary>
+            Decodes a URL.
+            </summary>
+            <param name="value">The value to decode.</param>
+            <returns>The decoded URL.</returns>
+        </member>
+        <member name="T:Junior.ApplicationServices.NewLineReplacer">
+            <summary>
+            Replaces <see cref="P:System.Environment.NewLine"/> occurrences with BR tags.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.NewLineReplacer.ReplaceWithBrTags(System.String)">
+            <summary>
+            Replaces <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences with BR tags.
+            </summary>
+            <param name="value">The value whose <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences are to be replaced.</param>
+            <returns><paramref name="value"/> with its <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences replaced.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="value"/> is null.</exception>
+        </member>
+        <member name="M:Junior.ApplicationServices.NewLineReplacer.ReplaceWithBrTags(System.Text.StringBuilder)">
+            <summary>
+            Replaces <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences with BR tags.
+            </summary>
+            <param name="stringBuilder">A <see cref="T:System.Text.StringBuilder"/> whose <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences are to be replaced.</param>
+            <returns><paramref name="stringBuilder"/> with its <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences replaced.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="stringBuilder"/> is null.</exception>
+        </member>
+        <member name="T:Junior.ApplicationServices.ReCaptchaValidator">
+            <summary>
+            Validate reCAPTCHA responses.
+            </summary>
+        </member>
+        <member name="M:Junior.ApplicationServices.ReCaptchaValidator.#ctor(Junior.ApplicationServices.IReCaptchaValidatorConfiguration,Junior.ApplicationServices.IUrlEncoder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.ApplicationServices.ReCaptchaValidator"/> class.
+            </summary>
+            <param name="configuration">Configuration necessary to send email messages.</param>
+            <param name="urlEncoder">A URL encoder.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="configuration"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="urlEncoder"/> is null.</exception>
+        </member>
+        <member name="M:Junior.ApplicationServices.ReCaptchaValidator.ValidateResponse(System.Net.IPAddress,System.String,System.String)">
+            <summary>
+            Validates a reCAPTCHA response.
+            </summary>
+            <param name="ipAddress">The remote IP address.</param>
+            <param name="challenge">The challenge string.</param>
+            <param name="response">The user's response.</param>
+            <returns>true if the user's response is correct; otherwise, false.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="ipAddress"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="challenge"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="response"/> is null.</exception>
+        </member>
+    </members>
+</doc>

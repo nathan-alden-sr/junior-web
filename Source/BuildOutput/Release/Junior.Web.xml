@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Junior.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Junior.Web.EmailSenderConfiguration">
+            <summary>
+            Configuration necessary to send email messages.
+            Configuration is initialized from a configuration section named 'emailSender'.
+            </summary>
+        </member>
+        <member name="M:Junior.Web.EmailSenderConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.Web.EmailSenderConfiguration"/> class.
+            Configuration is initialized from a configuration section named 'emailSender'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.SmtpHost">
+            <summary>
+            Gets the hostname of an SMTP server.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.SmtpPort">
+            <summary>
+            Gets a port for SMTP communication.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.Timeout">
+            <summary>
+            Gets a timeout for sending email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.UseSsl">
+            <summary>
+            Gets a value indicating if SSL will be used when sending email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.Credentials">
+            <summary>
+            Gets the credentials to use when authenticating with the SMTP server.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.FromAddress">
+            <summary>
+            Gets the email address sending the email messages.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfiguration.FromAddressDisplayName">
+            <summary>
+            Gets the display name of the email address sending the email messages.
+            </summary>
+        </member>
+        <member name="T:Junior.Web.EmailSenderConfigurationSection">
+            <summary>
+            A configuration section containing configuration for the <see cref="T:Junior.ApplicationServices.EmailSender"/> class.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.SmtpHost">
+            <summary>
+            Gets or sets the hostname of an SMTP server. The configuration property is named 'smtpHost'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.SmtpPort">
+            <summary>
+            Gets or sets a port for SMTP communication. The configuration property is named 'smtpPort'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.TimeoutInSeconds">
+            <summary>
+            Gets or sets a timeout for sending email messages. The configuration property is named 'timeoutInSeconds'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.UseSsl">
+            <summary>
+            Gets or sets a value indicating if SSL will be used when sending email messages. The configuration property is named 'useSsl'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.SmtpUsername">
+            <summary>
+            Gets or sets the username to use when authenticating with the SMTP server. The configuration property is named 'smtpUsername'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.SmtpPassword">
+            <summary>
+            Gets or sets the password to use when authenticating with the SMTP server. The configuration property is named 'smtpPassword'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.FromAddress">
+            <summary>
+            Gets or sets the email address sending the email messages. The configuration property is named 'fromAddress'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.EmailSenderConfigurationSection.FromAddressDisplayName">
+            <summary>
+            Gets or sets the display name of the email address sending the email messages. The configuration property is named 'fromAddressDisplayName'.
+            </summary>
+        </member>
+        <member name="T:Junior.Web.AbsoluteUrlBuilderConfiguration">
+            <summary>
+            Configuration necessary to build absolute URLs.
+            Configuration is initialized from a configuration section named 'absoluteUrlBuilder'.
+            </summary>
+        </member>
+        <member name="M:Junior.Web.AbsoluteUrlBuilderConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.Web.AbsoluteUrlBuilderConfiguration"/> class.
+            Configuration is initialized from a configuration section named 'absoluteUrlBuilder'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.AbsoluteUrlBuilderConfiguration.RootUrl">
+            <summary>
+            Gets a root URL.
+            </summary>
+        </member>
+        <member name="T:Junior.Web.AbsoluteUrlBuilderConfigurationSection">
+            <summary>
+            A configuration section containing configuration for the <see cref="T:Junior.Web.AbsoluteUrlBuilderConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.AbsoluteUrlBuilderConfigurationSection.RootUrl">
+            <summary>
+            Gets or sets a root URL. The configuration property is named 'rootUrl'.
+            </summary>
+        </member>
+        <member name="T:Junior.Web.HtmlEncoder">
+            <summary>
+            Encodes and decodes HTML.
+            </summary>
+        </member>
+        <member name="M:Junior.Web.HtmlEncoder.#ctor(Junior.ApplicationServices.INewLineReplacer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.Web.HtmlEncoder"/> class.
+            </summary>
+            <param name="newLineReplacer">An <see cref="T:Junior.ApplicationServices.INewLineReplacer"/> that replaces <see cref="P:System.Environment.NewLine"/>, carriage return and line feed occurrences with BR tags.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="newLineReplacer"/> is null.</exception>
+        </member>
+        <member name="M:Junior.Web.HtmlEncoder.Encode(System.String,Junior.ApplicationServices.HtmlEncoderOptions)">
+            <summary>
+            Encodes HTML.
+            </summary>
+            <param name="value">The value to encode.</param>
+            <param name="options">Encoding options.</param>
+            <returns>
+            The encoded HTML.
+            </returns>
+        </member>
+        <member name="M:Junior.Web.HtmlEncoder.Decode(System.String)">
+            <summary>
+            Decodes HTML.
+            </summary>
+            <param name="value">The value to decode.</param>
+            <returns>
+            The decoded HTML.
+            </returns>
+        </member>
+        <member name="T:Junior.Web.ReCaptchaValidatorConfiguration">
+            <summary>
+            Configuration necessary to validate reCAPTCHA responses.
+            Configuration is initialized from a configuration section named 'reCaptchaValidator'.
+            </summary>
+        </member>
+        <member name="M:Junior.Web.ReCaptchaValidatorConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.Web.ReCaptchaValidatorConfiguration"/> class.
+            Configuration is initialized from a configuration section named 'reCaptchaValidator'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfiguration.Url">
+            <summary>
+            Gets the URL for which reCAPTCHA is configured.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfiguration.PublicKey">
+            <summary>
+            Gets the reCAPTCHA public key.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfiguration.PrivateKey">
+            <summary>
+            Gets the reCAPTCHA private key.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfiguration.UserAgent">
+            <summary>
+            Gets the value of the User-Agent header when validating responses.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfiguration.Timeout">
+            <summary>
+            Gets the amount of time before a validation request times out.
+            </summary>
+        </member>
+        <member name="T:Junior.Web.ReCaptchaValidatorConfigurationSection">
+            <summary>
+            A configuration section containing configuration for the <see cref="T:Junior.Web.ReCaptchaValidatorConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfigurationSection.Url">
+            <summary>
+            Gets or sets the URL for which reCAPTCHA is configured. The configuration property is named 'url'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfigurationSection.PublicKey">
+            <summary>
+            Gets or sets the reCAPTCHA public key. The configuration property is named 'publicKey'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfigurationSection.PrivateKey">
+            <summary>
+            Gets or sets the reCAPTCHA private key. The configuration property is named 'privateKey'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfigurationSection.UserAgent">
+            <summary>
+            Gets or sets the value of the User-Agent header when validating responses. The configuration property is named 'userAgent'.
+            </summary>
+        </member>
+        <member name="P:Junior.Web.ReCaptchaValidatorConfigurationSection.TimeoutInSeconds">
+            <summary>
+            Gets or sets the amount of time before a validation request times out. The configuration property is named 'timeoutInSeconds'.
+            </summary>
+        </member>
+        <member name="T:Junior.Web.ServiceErrorBehaviorAttribute">
+            <summary>
+            Adds an error handler type to the list of error handlers associated with all channel dispatchers.
+            </summary>
+        </member>
+        <member name="M:Junior.Web.ServiceErrorBehaviorAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Junior.Web.ServiceErrorBehaviorAttribute"/> class.
+            </summary>
+            <param name="errorHandlerType">The type of error handler to associate with all channel dispatchers.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="errorHandlerType"/> is null.</exception>
+        </member>
+        <member name="M:Junior.Web.ServiceErrorBehaviorAttribute.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Provides the ability to inspect the service host and the service description to confirm that the service can run successfully.
+            </summary>
+            <param name="serviceDescription">The service description.</param>
+            <param name="serviceHostBase">The service host that is currently being constructed.</param>
+        </member>
+        <member name="M:Junior.Web.ServiceErrorBehaviorAttribute.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Provides the ability to pass custom data to binding elements to support the contract implementation.
+            </summary>
+            <param name="serviceDescription">The service description of the service.</param>
+            <param name="serviceHostBase">The host of the service.</param>
+            <param name="endpoints">The service endpoints.</param>
+            <param name="bindingParameters">Custom objects to which binding elements have access.</param>
+        </member>
+        <member name="M:Junior.Web.ServiceErrorBehaviorAttribute.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Provides the ability to change run-time property values or insert custom extension objects such as error handlers, message or parameter interceptors, security extensions, and other custom extension objects.
+            </summary>
+            <param name="serviceDescription">The service description.</param>
+            <param name="serviceHostBase">The host that is currently being built.</param>
+        </member>
+        <member name="T:Junior.Web.UrlEncoder">
+            <summary>
+            Encodes and decodes URLs.
+            </summary>
+        </member>
+        <member name="M:Junior.Web.UrlEncoder.Encode(System.String)">
+            <summary>
+            Encodes a URL.
+            </summary>
+            <param name="value">The value to encode.</param>
+            <returns>
+            The encoded URL.
+            </returns>
+        </member>
+        <member name="M:Junior.Web.UrlEncoder.Decode(System.String)">
+            <summary>
+            Decodes a URL.
+            </summary>
+            <param name="value">The value to decode.</param>
+            <returns>
+            The decoded URL.
+            </returns>
+        </member>
+    </members>
+</doc>

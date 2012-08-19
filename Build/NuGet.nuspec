@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>JuniorWeb</id>
+		<version>$version$</version>
+		<title>JuniorWeb</title>
+		<authors>Nathan Alden Sr.</authors>
+		<description>JuniorWeb is a library of common Web-related classes.</description>
+		<releaseNotes></releaseNotes>
+		<projectUrl>https://github.com/NathanAlden/JuniorWeb</projectUrl>
+		<iconUrl>https://docs.google.com/uc?export=download&amp;id=0B8a4O6RATfaXQ2YxekpxbXRfUjQ</iconUrl>
+		<dependencies>
+			<dependency id="JuniorApplicationServices" version="1.0.2"/>
+			<dependency id="JuniorCommon" version="1.0.6"/>
+		</dependencies>
+		<references>
+			<reference file="Junior.Web.dll"/>
+		</references>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" targetFramework="net40"/>
+			<frameworkAssembly assemblyName="System.Xml" targetFramework="net40"/>
+			<frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="net40"/>
+		</frameworkAssemblies>
+		<tags>Junior</tags>
+	</metadata>
+	<files>
+		<file src="NuGet Staging\LICENSE"/>
+		<file src="NuGet Staging\README"/>
+		<file src="NuGet Staging\bin\Junior.Web.*" target="lib\net40"/>
+	</files>
+</package>

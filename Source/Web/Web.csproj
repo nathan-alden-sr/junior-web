@@ -25,22 +25,22 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\BuildOutput\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <WarningsAsErrors>1591</WarningsAsErrors>
-    <DocumentationFile>..\BuildOutput\Debug\Junior.Web.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Junior.Web.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\BuildOutput\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <WarningsAsErrors>1591</WarningsAsErrors>
-    <DocumentationFile>..\BuildOutput\Release\Junior.Web.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Junior.Web.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -64,21 +64,26 @@
     <Compile Include="UrlEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Junior.ApplicationServices">
-      <HintPath>..\..\Binaries\JuniorApplicationServices\Junior.ApplicationServices.dll</HintPath>
+    <Reference Include="Junior.ApplicationServices, Version=1.0.1.0, Culture=neutral, PublicKeyToken=998713eb9a0cce30, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\JuniorApplicationServices.1.0.1\lib\net40\Junior.ApplicationServices.dll</HintPath>
     </Reference>
-    <Reference Include="Junior.Common">
-      <HintPath>..\..\Binaries\JuniorApplicationServices\Junior.Common.dll</HintPath>
+    <Reference Include="Junior.Common, Version=1.0.6.0, Culture=neutral, PublicKeyToken=998713eb9a0cce30, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\JuniorCommon.1.0.6\lib\net40\Junior.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\JuniorWeb.snk">
       <Link>JuniorWeb.snk</Link>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
